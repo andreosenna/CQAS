@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <title>app1</title>
+      <meta charset="utf-8">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="./css/estilo.css"/>
+</head>
+<body>
+  <h1 class="titulo">Qualiapp > Menu</h1>
+  <header>
+    <div id="menu"></div>
+</header>
+ <Script>
+  fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+
+ </Script>
+
+<form>
+ <label>Data :<br><input type="datetime-local"  class="form" id="dataInspecao"></label>
+  <label> Nome Inspetor :<br>
+    <select class="form-select" name="Inspetor" id="idSelectInspetor">
+  </select>
+
+  </label>
+  <label>Produto<br>
+  <select class="form-select" name="nameprodutos" id="idprodutos">
+  </select>
+  </label>
+  <br>
+
+  <label>Inspeção Geral<br>
+  Conforme <input type="radio" class="form-check-input" name="inspeGeral" id="idBtRadioa" value='Conforme' checked />
+  Não Conforme <input type="radio" class="form-check-input" name="inspeGeral" id="idBtRadiob" value='Não Conforme' />
+</label>
+  <br>
+  <br>
+  <label>Anexar Arquivo<br><input type="file"></label>
+  <br><br>
+  <label for="Aparencia">Aparencia <br>
+  <textarea rows="4" cols="50"></textarea></label><br>
+  <label>Conforme <input type="radio" name="iProdConforme" id="idBtRadioa" value='Conforme' checked /></label>
+  <label>Não Conforme <input type="radio" name="iProdConforme" id="idBtRadiob" value='Nao Conforme' /></label>
+  <br>
+  <label>Anexar Arquivo<input type="file"></label>
+  <br>
+  
+  <label>Rebarbagem<br>
+    <textarea name="statusRebarbagem" id="textareaRebarbagem" cols="50" rows="4"></textarea><br>
+    Conforme <input type="radio" name="RebConforme" id="idBtRadioa" value='Conforme' checked />
+    Não Conforme <input type="radio" name="RebConforme" id="idBtRadiob" value='Não Conforme' /></label>
+    <br>
+  <label>Anexar Arquivo<input type="file"></label>
+  <br>
+  
+  <label>Cor <br>
+      <textarea name="Cor" id="idcor" cols="50" rows="4"></textarea> <br>
+    Conforme <input type="radio" name="CorConforme" id="idBtRadioa" value='Conforme' checked />
+    Não Conforme <input type="radio" name="CorConforme" id="idBtRadiob" value='Não Conforme' />
+  </label><br>
+  <br>
+  
+  <label>Anexar Arquivo<input type="file" value="anexar" title=" "></label>
+  
+  <br><br><br>
+  <div id="botoes">
+  <label><input type="submit" name="btSubmit" id="idBtSubmit" onclick="Enviar()"></label>
+  <label><input type="reset" value="limpar"></label>
+  </div>
+  <div id="resposta">
+
+  </div>
+</form>
+  <script>
+
+    function Enviar() {
+      try {
+        const btn = document.getElementById('idBtSubmit')
+        const produtos = document.getElementById('idprodutos').value
+        const prodConforme = document.querySelector('input[name="iProdConforme"]:checked').value
+        const rebConforme = document.querySelector('input[name="RebConforme"]:checked').value
+        const corConforme = document.querySelector('input[name="CorConforme"]:checked').value
+        const inspeGeral = document.querySelector('input[name="inspeGeral"]:checked').value
+        const dataInspecao = document.getElementById('dataInspecao').value
+
+
+        console.log(prodConforme, rebConforme, corConforme)
+        const resp = document.getElementById('resposta')
+
+        resp.innerHTML = 'data: ' + dataInspecao + '<br>O produto<br> ' + produtos.bold() + '<br>' +
+          'o produto está: ' + prodConforme.bold() + '<br> as rebarbas estão: ' +
+          rebConforme.bold() + '<br> e a cor está: ' + corConforme.bold() +
+          '<br><h3>A inspeção Geral é considerada: ' + inspeGeral.bold()
+
+      } catch (err) {
+        console.log(err)
+
+      }
+    }
+  </script>
+
+<footer class="rodape">
+  <a class="botao" href="Indice.html">Tela inicial</a></p>
+  <a class="botao" href="#" onclick="funcaoSair()">Sair</a></p>
+</footer>
+<script src="./publicjs/NovaInspecao.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

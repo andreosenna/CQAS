@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>app1</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css"/>
+  </head>
+  <body>
+  <h1 class="titulo">Qualiapp > Inspeções em Andamento</h1>
+<div class="menu">
+  <header>
+    <div id="menu"></div>
+</header>
+ <Script>
+  fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+
+ </Script>
+</div>
+<section>
+
+    <h5 class="title" >Ver todas abertas</h5>
+    <table class="table table-striped" id="tabela1">
+      <caption>Tabela 1</caption>
+        <thead>
+          <tr>
+            <td>Numero</td>
+            <td>Produto</td>
+            <td>Ordem de Produção</td>
+            <td>Problema</td>
+            <td>Imagem</td>
+            <td>Ir para</td>
+            <td>Status</td>
+          </tr>
+         </thead>
+    <tbody id="tbody1">
+
+    </tbody>
+   
+ </table>
+
+
+
+
+<form action="" id="form_inserir">
+<input type="text" id="idCodigo" placeholder="Código" value="teste">
+<input type="text" id="idDescricao" placeholder="Descrição" value="teste">
+<input type="text" id="idOP" placeholder="Ordem de Produção" value="teste">
+<input type="text" id="idProblema" placeholder="Problema" value="teste">
+<input type="url" id="idImagem" placeholder="Imagem" value="teste">
+<input type="text" id="idStatus" placeholder="Status" value="teste">
+<input type="button" value="Abrir Nova" id="btfazer" onclick="novoItem()"></input>
+ </form>
+
+
+
+    <br>
+<script>
+
+      
+</script>
+<br>
+</section>
+
+
+
+</script>
+
+    <div class="rodape">
+      <a class="botao" href="Indice.html">Tela inicial</a></p>
+      <a class="botao" href="#">Sair</a></p>
+    </div>
+    <script onload="iniciarTabela()" src="./publicjs/inspecoes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+<!--
+  <table id="tabela2">
+  <caption>Tabela 2</caption>
+   <thead>
+   <tr><th>titulo 1</td><td>titulo 2</td><td>titulo 3</th></tr> 
+  </thead><tbody>
+   <tr><td>Linha 1a</td> <td>Linha 1b</td><td>Linha 1c</td> </tr>
+   <tr><td>Linha 2a</td> <td>Linha 2b</td><td>Linha 2c</td> </tr>
+  </tbody>
+  </table>
+  <br>
+<input type="button" value="para cada1" id="btfor" onclick="paraCada()"></input>
+<br>
+<script>
+  //tabela 2
+    function paraCada(){
+      let arrayA =["001","Andre","Qualidade"]
+      console.log(arrayA)
+
+      let tabela2 = document.getElementById('tabela2')
+      let l1 = tabela2.insertRow(tabela2.rows.lenght)
+      var lin = [0,1,2]
+      
+      for (let g = 0; g < arrayA.length;) {
+        lin[g]= l1.insertCell(g)
+        lin[g].innerHTML = arrayA[g]
+        g++
+      }}
+</script>
+
+<table id="tabela3">
+  <caption>Tabela 3</caption>
+  <thead>
+  <tr><th>titulo 1</td><td>titulo 2</td><td>titulo 3</th></tr> 
+ </thead><tbody>
+  <tr><td>Linha 1a</td> <td>Linha 1b</td><td>Linha 1c</td> </tr>
+  <tr><td>Linha 2a</td> <td>Linha 2b</td><td>Linha 2c</td> </tr>
+ </tbody>
+ </table>
+ <br>
+<input type="button" value="para cada2" id="btfor" onclick="paraCada2()"></input>
+<br>
+   <br>
+<script>
+  //tabela 3
+function paraCada2(){
+
+  let array3 = ['002','Andre','Seguraça do Trabalho']
+
+const tabela3 = document.getElementById('tabela3')
+
+let linhatbl3 = tabela3.insertRow(tabela3.rows.lenght)
+let sublinha= [0,1,2]
+
+for (let g = 0; g < array3.length; g++) {
+  sublinha[g] = linhatbl3.insertCell(g)
+  sublinha[g].innerHTML = array3[g]
+  
+}
+
+
+
+
+}
+
+
+-->
