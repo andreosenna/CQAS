@@ -1,4 +1,4 @@
-// No seu arquivo 'Posts.js' (ES6)
+// testando metodo post
 class Posts {
     constructor() {
         this.posts = [

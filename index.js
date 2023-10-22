@@ -1,8 +1,11 @@
+// TREINANDO CRIAR API 
+
 import express from 'express';
 import bodyparser from 'body-parser';
 import Posts from './Models/Posts.js';
 import Path from 'path';
 import { fileURLToPath } from 'url'; // Importe fileURLToPath
+import { log } from 'console';
 const __filename = fileURLToPath(import.meta.url); // Obtenha __filename usando import.meta.url
 const __dirname = Path.dirname(__filename); // Obtenha __dirname do __filename
 
@@ -28,3 +31,5 @@ app.post("/new", bodyparser.json(), (req, res) => {
 
   res.send("post enviado");
 });
+
+
