@@ -1,0 +1,44 @@
+[
+    {
+        "Codigo": 1,
+        "Produtos": "Cadeira A",
+        "Familia": "moveis",
+        "quantidade": 1200
+    },
+    {
+        "Codigo": 2,
+        "Produtos": "Mesa",
+        "Familia": "moveis",
+        "quantidade": 300
+    },
+    {
+        "Codigo": 3,
+        "Produtos": "Banqueta",
+        "Familia": "moveis",
+        "quantidade": 3000
+    },
+    {
+        "Codigo": 4,
+        "Produtos": "Espreguiçadeira",
+        "Familia": "moveis",
+        "quantidade": 200
+    },
+    {
+        "Codigo": 5,
+        "Produtos": "Pa de lixo",
+        "Familia": "utilidades",
+        "quantidade": 50
+    },
+    {
+        "Codigo": 6,
+        "Produtos": "Lixiera",
+        "Familia": "utilidades",
+        "quantidade": 50
+    },
+    {
+        "Codigo": 7,
+        "Produtos": "Bacia",
+        "Familia": "utilidades",
+        "quantidade": 75
+    }
+]
