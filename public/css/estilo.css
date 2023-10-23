@@ -2,6 +2,7 @@ body{
     background-color: rgb(229, 247, 229);
 }
 .welcome{
+    margin-top: 50px;
     text-align: center;
      justify-content: center;
      background-color: white;
