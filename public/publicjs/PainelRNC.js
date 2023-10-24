@@ -1,7 +1,5 @@
 import {RNCS} from "../BD/Bd.js";
 
-
-
 const tabela = document.getElementById('tabelaRNCs');
 
 function iniciarTabela() {

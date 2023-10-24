@@ -12,7 +12,7 @@
 <body>
     <h1 class="title">CQAS - Abrir RNC</h1>
     <header>
-       
+
         <div id="menu"></div>
         <Script>
             fetch('./menu.html')
@@ -26,52 +26,53 @@
 
     <br><br>
     <h3>Abrir RNC</h3>
-    <div name="conteudo" class="Class_Conteúdo" id="idConteudo">
-        <label> Selecione o responsável
-            <select name="nameResponsavelAbertura" id="idSelectInspetor">
-            </select>
-    </label>
-        <label> O setor
-            <select name="nameSetor" id="idSetor">
-                <option value="Qualidade">Qualidade </option>
-                <option value="Produção">Produção</option>
-                <option value="Materiais">Materiais</option>
-                <option value="Manutenção">Manutenção</option>
-            </select>
+    <form action="">
+
+        <div name="conteudo" class="Class_Conteúdo" id="idConteudo">
+            <label> Selecione o responsável
+                <select class="form-control" name="nameResponsavelAbertura" id="idSelectInspetor">
+                </select>
+            </label>
+            <label> O setor
+                <select class="form-control" name="nameSetor" id="idSetor">
+                    <option value="Qualidade">Qualidade </option>
+                    <option value="Produção">Produção</option>
+                    <option value="Materiais">Materiais</option>
+                    <option value="Manutenção">Manutenção</option>
+                </select>
+            </label>
+            <label>Data :<input class="form-control" type="datetime-local" id="id_dataRNC">
+            </label>
+            <label>Origem:
+                <input class="rb" type="radio" name="Origem" value="Produto">Produto
+                <input class="rb" type="radio" name="Origem" value="Processo">Processo
+                <input class="rb" type="radio" name="Origem" value="Cliente">Cliente
+                <input class="rb" type="radio" name="Origem" value="Auditoria Interna">Auditoria Interna
+                <input class="rb" type="radio" name="Origem" value="Auditoria Externa">Auditoria Externa
+            </label>
+        </div name="conteudo">
+        <label class="form-control">Gravidade:
+            <input class="rb" type="radio" name="Gravidade" value="Baixa">Baixa
+            <input class="rb" type="radio" name="Gravidade" value="Media">Media
+            <input class="rb" type="radio" name="Gravidade" value="grave">Grave
         </label>
-        <label>Data :<input type="datetime-local" id="id_dataRNC">
+        <label class="input-group mb-3"> Descrição da RNC
+            <textarea id="txtRNC" class="form-control" name="textarea"></textarea>
         </label>
-        <label>Origem:
-            <input class="rb" type="radio" name="Origem" value="Produto">Produto
-            <input class="rb" type="radio" name="Origem" value="Processo">Processo
-            <input class="rb" type="radio" name="Origem" value="Cliente">Cliente
-            <input class="rb" type="radio" name="Origem" value="Auditoria Interna">Auditoria Interna
-            <input class="rb" type="radio" name="Origem" value="Auditoria Externa">Auditoria Externa
+
+        <label class="input-group mb-3"> Ações de Contenção
+            <textarea id="txtContecao" class="form-control" name="textarea"></textarea>
         </label>
-    </div name="conteudo">
-    <label>Gravidade:
-        <input class="rb" type="radio" name="Gravidade" value="Baixa">Baixa
-        <input class="rb" type="radio" name="Gravidade" value="Media">Media
-        <input class="rb" type="radio" name="Gravidade" value="grave">Grave
-    </label>
-    <br>
-    <label> Descrição da RNC
-        <textarea id="txtRNC" name="textarea" style="width:250px;height:150px;"></textarea>
-    </label>
-    <br>
-    <label> Ações de Contenção
-        <textarea id="txtContecao" name="textarea" style="width:250px;height:150px;"></textarea>
-    </label>
-    <br>
-    <label> Plano de Ação
-        <textarea id="txtPlanoAcao" name="textarea" style="width:250px;height:150px;"></textarea>
-    </label>
-    <br>
-    <label>Anexar Evidencia<input type="file"></label>
-    
-<div class="rodape">
-    <input type="button" onclick="criarRNC()" value="enviar">
-</div>
+
+        <label class="input-group mb-3"> Plano de Ação
+            <textarea class="form-control" id="txtPlanoAcao" name="textarea"></textarea>
+        </label>
+
+        <label>Anexar Evidencia<input class="form-control" type="file"></label>
+    </form>
+    <div class="rodape">
+        <input type="button" class="" onclick="criarRNC()" value="enviar">
+    </div>
     <br>
     <div id="Status">
         <h3>........................</h3>

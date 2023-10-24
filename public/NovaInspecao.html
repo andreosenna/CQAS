@@ -23,8 +23,9 @@
       });
   </Script>
   </header>
-  <form>
-    <label>Data :<br><input type="datetime-local" class="form" id="dataInspecao"></label>
+  <form class="form-control">
+    <label>Data :<br><input type="datetime-local" class="form-control" id="dataInspecao">
+    </label>
     <label> Nome Inspetor :<br>
       <select class="form-select" name="Inspetor" id="idSelectInspetor">
       </select>
@@ -37,7 +38,7 @@
     <br>
 
     <label>Inspeção Geral<br>
-      Conforme <input type="radio" class="form-check-input" name="inspeGeral" id="idBtRadioa" value='Conforme'
+      Conforme <input type="radio" class="form-check-input " name="inspeGeral" id="idBtRadioa" value='Conforme'
         checked />
       Não Conforme <input type="radio" class="form-check-input" name="inspeGeral" id="idBtRadiob"
         value='Não Conforme' />
@@ -46,16 +47,16 @@
     <br>
     <label>Anexar Arquivo<br><input type="file"></label>
     <br><br>
-    <label for="Aparencia">Aparencia <br>
-      <textarea rows="4" cols="50"></textarea></label><br>
+    <label class="form-control" for="Aparencia">Aparencia <br>
+      <textarea  rows="4" cols="150"></textarea></label><br>
     <label>Conforme <input type="radio" name="iProdConforme" id="idBtRadioa" value='Conforme' checked /></label>
     <label>Não Conforme <input type="radio" name="iProdConforme" id="idBtRadiob" value='Nao Conforme' /></label>
     <br>
     <label>Anexar Arquivo<input type="file"></label>
     <br>
 
-    <label>Rebarbagem<br>
-      <textarea name="statusRebarbagem" id="textareaRebarbagem" cols="50" rows="4"></textarea><br>
+    <label >Rebarbagem<br>
+      <textarea class="form-control" name="statusRebarbagem" id="textareaRebarbagem" cols="150" rows="4"></textarea><br>
       Conforme <input type="radio" name="RebConforme" id="idBtRadioa" value='Conforme' checked />
       Não Conforme <input type="radio" name="RebConforme" id="idBtRadiob" value='Não Conforme' /></label>
     <br>
@@ -63,7 +64,7 @@
     <br>
 
     <label>Cor <br>
-      <textarea name="Cor" id="idcor" cols="50" rows="4"></textarea> <br>
+      <textarea name="Cor" id="idcor" cols="150" rows="4"></textarea> <br>
       Conforme <input type="radio" name="CorConforme" id="idBtRadioa" value='Conforme' checked />
       Não Conforme <input type="radio" name="CorConforme" id="idBtRadiob" value='Não Conforme' />
     </label><br>
