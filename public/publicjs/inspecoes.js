@@ -1,37 +1,11 @@
-const BD = [
-    {
-        item: 1,
-        Produto: "Mesa Monobloco",
-        OP: 1,
-        problema: "Gás",
-        imagem: '<img src="./img/M17-mesa_quadrada.jpg" width="50px">',
-        Status: "Aberto"
-    },
-    {
-        item: 2,
-        Produto: "Mesa Infantil",
-        OP: 2,
-        problema: "Cor Fora do Padrão",
-        imagem: '<img src="./img/M47_mesa-infantil-azul.jpg" width="50px">',
-        Status: "Aberto"
-    },
-    {
-        item: 3,
-        Produto: "Banqueta Escada",
-        OP: 3,
-        problema: "Cor Fora do Padrão",
-        imagem: '<img src="./img/M15_1banqueta_escada_preta.jpg" width="50px">',
-        Status: "Aberto"
-    }
-];
+import {Inspecoes} from '../BD/Bd.js'
 
 const tabela = document.getElementById('tabela1');
-
 function iniciarTabela() {
     const ver = '<input type="button" value="ver">';
     const tbody = tabela.querySelector('tbody');
     
-    BD.forEach(item => {
+    Inspecoes.forEach(item => {
         
         var linha = tbody.insertRow(tbody.rows.length-1);
         var linha1 = linha.insertCell(0);
@@ -50,7 +24,12 @@ function iniciarTabela() {
         linha7.innerHTML = item.Status;
     });
 }
+document.addEventListener("DOMContentLoaded", function() {
+    iniciarTabela();
+});
 
+const btNovoItem = document.getElementById('btfazer')
+btNovoItem.addEventListener('click',novoItem)
 function novoItem() {
     const Codigo = document.getElementById("idCodigo").value;
     const Descricao = document.getElementById("idDescricao").value;
@@ -68,7 +47,7 @@ function novoItem() {
         Status: Status
     };
 
-    BD.push(novoObjetoBD);
+    Inspecoes.push(novoObjetoBD);
 
     // Adicione apenas o novo item à tabela
     var linha = tabela.querySelector('tbody').insertRow(tabela.rows.length - 1); // -1 para evitar duplicação
@@ -86,5 +65,5 @@ function novoItem() {
     linha5.innerHTML = novoObjetoBD.imagem;
     linha6.innerHTML = '<input type="button" value="ver">';
     linha7.innerHTML = novoObjetoBD.Status;
+    console.log(Inspecoes);
 }
-

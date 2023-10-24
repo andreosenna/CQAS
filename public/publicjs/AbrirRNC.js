@@ -1,40 +1,4 @@
-const BDUsuarios = [
-   
-    {  Matricula: 1,
-        Nome: 'Andre',
-        Função: 'adm',
-        Status: "Ativo"
-    },
-    {
-        Matricula: 2,
-        Nome: 'Fabio',
-        Função: 'Inspetor',
-        Status: "Ativo"
-    },
-    {
-        Matricula: 3,
-        Nome: 'Icor',
-        Função: 'Qualidade',
-        Status: "Ativo"
-    },
-    {
-        Matricula: 4,
-        Nome: 'Claudio',
-        Função: 'Laboratorio',
-        Status: "Ativo"
-    },
-    {
-        Matricula: 5,
-        Nome: 'Anderson',
-        Função: 'Inspetor',
-        Status: "Ativo"
-    },
-    {
-        Matricula: 6,
-        Nome: 'Rafael',
-        Função: 'Inspetor',
-        Status: "Inativo"
-    }]
+import {BDUsuarios} from '../BD/Bd.js'
 
 function carregarInspetor(){
     let options = document.getElementById("idSelectInspetor")
@@ -44,7 +8,9 @@ function carregarInspetor(){
         op.value = elements.Matricula
         op.text = elements.Nome
         options.appendChild(op)
-
     })
 }
-  carregarInspetor() 
+document.addEventListener("DOMContentLoaded", function() {
+    carregarInspetor();
+});
+

@@ -8,7 +8,7 @@
     <div class="dropdown-menu" aria-labelledby="inicioDropdown">
       <a class="dropdown-item" onclick="funcaoSair()">Sair</a>
       <a class="dropdown-item" href="#">Configurações</a>
-      
+
     </div>
   </ul>
   <ul class="nav-item dropdown">
@@ -61,16 +61,17 @@
   </ul>
 
 
-<script>
-  function funcaoSair() {
-let text = "Deseja sair do Aplicativo?\nEither Sim ou Cancelar.";
-if (confirm(text) == true) {
-  text = "You pressed OK!";
-  window.close();
-  alert("você saiu")
-} else {
-  text = "You canceled!";
-  alert("você cancelou")
-}}
-</script>
+  <script>
+    function funcaoSair() {
+      let text = "Deseja sair do Aplicativo?\n Either Sim ou Cancelar.";
+      if (confirm(text) == true) {
+        text = "You pressed OK!";
+        window.close();
+        alert("você saiu")
+      } else {
+        text = "You canceled!";
+        alert("você cancelou")
+      }
+    }
+  </script>
 </nav>
