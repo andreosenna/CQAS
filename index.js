@@ -20,7 +20,8 @@ app.listen(PORT, () => {
 });
 
 app.get("/all", (req, res) => {
-  res.json(JSON.stringify(InstPost.getAll()));
+  var result =  res.json(JSON.stringify(InstPost.getAll()));
+  
 });
 
 app.post("/new", bodyparser.json(), (req, res) => {
