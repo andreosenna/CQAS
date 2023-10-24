@@ -6,7 +6,7 @@
       Inicio
     </a>
     <div class="dropdown-menu" aria-labelledby="inicioDropdown">
-      <a class="dropdown-item" href="#">Sair</a>
+      <a class="dropdown-item" onclick="funcaoSair()">Sair</a>
       <a class="dropdown-item" href="#">Configurações</a>
       
     </div>
@@ -59,4 +59,18 @@
       <a class="dropdown-item" href="./Usuarios.html">Usuarios</a>
     </div>
   </ul>
+
+
+<script>
+  function funcaoSair() {
+let text = "Deseja sair do Aplicativo?\nEither Sim ou Cancelar.";
+if (confirm(text) == true) {
+  text = "You pressed OK!";
+  window.close();
+  alert("você saiu")
+} else {
+  text = "You canceled!";
+  alert("você cancelou")
+}}
+</script>
 </nav>
