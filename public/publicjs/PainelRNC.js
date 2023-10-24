@@ -1,7 +1,6 @@
-const RNCS =[
-{id:1,Status:"Aberta",Descricao:"Falha na peça",Responsavel:"Andre",dtCriação:"01/01/2023"},
-{id:2,Status:"fechada",Descricao:"Falha injeção",Responsavel:"Andre",dtCriação:"02/01/2023"}
-]
+import {RNCS} from "../BD/Bd.js";
+
+
 
 const tabela = document.getElementById('tabelaRNCs');
 
@@ -24,4 +23,8 @@ function iniciarTabela() {
         linha6.innerHTML = '<input type="button" value="Abrir">'
     });
 }
-iniciarTabela()
+
+document.addEventListener("DOMContentLoaded", function() {
+    iniciarTabela();
+});
+

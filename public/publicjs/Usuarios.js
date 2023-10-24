@@ -1,7 +1,4 @@
-const Usuarios =[
-    {Id:1,Nome:"Andre",Funcao:"Analista",Nivel:"adm",Status:"ativo"},
-    {Id:2,Nome:"Joao",Funcao:"Inspetor",Nivel:"iql",Status:"ativo"}
-    ]
+import {Usuarios} from "../BD/Bd.js";
     
   
     const tabela = document.getElementById('tabelaUsuarios');

@@ -49,6 +49,7 @@ const Usuarios =[
     {Id:3,Nome:"Carlos",Funcao:"Inspetor",Nivel:"iql",Status:"ativo"},
     {Id:4,Nome:"Maria",Funcao:"Diretor",Nivel:"adm",Status:"ativo"}
     ]
+
 const BDUsuarios = [
    
         {  Matricula: 1,
@@ -114,4 +115,8 @@ const Inspecoes = [
             }
         ];
 
-export {Usuarios,Itens, BDUsuarios,Inspecoes}
+        const RNCS =[
+            {id:1,Status:"Aberta",Descricao:"Falha na peça",Responsavel:"Andre",dtCriação:"01/01/2023"},
+            {id:2,Status:"fechada",Descricao:"Falha injeção",Responsavel:"Andre",dtCriação:"02/01/2023"}
+            ]
+export {Usuarios,Itens, BDUsuarios,Inspecoes,RNCS}
