@@ -111,7 +111,6 @@
                         <option value="Entrada">Entrada</option>
                         <option value="Evento">Evento</option>
                         <option value="Saida">Saida</option>
-                        <option value="Parada">Parada</option>
                         <option value="Perda">Perda</option>
 
                     </select></td>
@@ -139,6 +138,7 @@
                  <th>Tipo Movimento</th>
                  <th>Data/Hora</th>
                  <th>Quantidade</th>
+                 <th>Motivo</th>
                  <th>Detalhamento</th>
             </tr>
             </thead>
@@ -149,6 +149,7 @@
                     <td>25/10/2023 07:01:00</td>
                     <td>0</td>
                     <td>Inicio Producao</td>
+                    <td>-</td>
                 </tr>
                 <tr>
                 <td>01</td>
@@ -156,6 +157,7 @@
                 <td>25/10/2023 09:01:00</td>
                 <td>300</td>
                 <td>Matéria Prima</td>
+                <td>Polimero</td>
             </tr>
             <tr>
                 <td>02</td>
@@ -163,6 +165,7 @@
                 <td>25/10/2023 09:07:00</td>
                 <td>30</td>
                 <td>Produto Acabado</td>
+                <td>-</td>
             </tr>
             <tr>
                 <td>03</td>
@@ -170,19 +173,22 @@
                 <td>25/10/2023 09:17:00</td>
                 <td>3</td>
                 <td>Perda Borra</td>
+                <td>Ajuste Máquina</td>
             </tr>
             <tr>
                 <td>04</td>
                 <td>Evento</td>
                 <td>25/10/2023 09:17:00</td>
                 <td>0</td>
+                <td>Entrada Parada</td>
                 <td>Manutenção Elétrica</td>
             </tr>
             <tr>
-                <td>04</td>
+                <td>05</td>
                 <td>Evento</td>
                 <td>25/10/2023 09:47:00</td>
                 <td>0</td>
+                <td>Retorno Parada</td>
                 <td>Manutenção Elétrica</td>
             </tr>
             </tbody>
@@ -211,14 +217,7 @@
                     detalhamento.add(option);
                 });
             }
-            else if (selectedValue === "Entrada") {
-                var entradaOptions = ["Matéria Prima", "Aditivos", "Outros"];
-                entradaOptions.forEach(function (optionText) {
-                    var option = document.createElement("option");
-                    option.text = optionText;
-                    detalhamento.add(option);
-                });
-            }else if (selectedValue === "Saida") {
+            else if (selectedValue === "Saida") {
                 var saidaOptions = ["Produto Acabado", "Devolução MP", "Outros"];
                 saidaOptions.forEach(function (optionText) {
                     var option = document.createElement("option");
@@ -226,7 +225,7 @@
                     detalhamento.add(option);
                 });
             }else if (selectedValue === "Evento") {
-                var eventoOptions = ["Inicio Producao", "Fim Producao", "Pausa Producao","Recomeço Producao"];
+                var eventoOptions = ["Inicio Producao", "Fim Producao", "Entrada Parada","Retorno Parada", "Pausa Producao","Recomeço Producao"];
                 eventoOptions.forEach(function (optionText) {
                     var option = document.createElement("option");
                     option.text = optionText;
