@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>QUALIAPP - Em Breve</title>
+    <title>QUALIAPP - OP</title>
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1 class="titulo">CQAS > Em breve</h1>
+    <h1 class="titulo">CQAS > OP</h1>
 
     <header>
         <div id="menu"></div>
@@ -26,145 +26,214 @@
     <section>
         <div class="welcome">
             <div class="welcome-text">
-                <h1>Lançamento de OP</h1>
+                <h1>Cabeçalho da OP</h1>
             </div>
-            <table class="table table-striped" id="cabecalhoOP">
+            <table class="table table-dark" id="cabecalhoOP">
                 <thead>
                     <tr>
                         <th>Numero de OP</th>
+                        <th>Máquina</th>
                         <th>Produto</th>
+                        <th>Qte Programada</th>
                         <th>Data Emissão</th>
-			<th>Ciclo Padrão</th>
-			<th>PH Padrão</th>
-			<th>Status</th>
+                        <th>Ciclo Padrão</th>
+                        <th>PH Padrão</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
+                        <td>J800-1</td>
                         <td>Cadeira plastica</td>
-                        <td>25/10/2023</td>
-			<td>60</td>
-			<td>60</td>
-			<td>Pendente</td>
-                    </tr>
-                </tbody>
-            </table>
-              
-
-            </div>
-            <table class="table table-striped" id="tabelaTotal">
-                <thead>
-                    <tr>
-
-                       
-                        <th>Qte Programada</th>
-                        <th>Qte Produzida</th>
-                        <th>Qte Pendente</th>
-                        <th>PH Medio Realizado</th>
-                        <th>Ciclo Medio Realizado</th>
-                        <th>MP Estimada</th>
-                        <th>MP Consumida</th>
-                        <th>MP Pendente</th>
-                        
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-
-                        
                         <td>3000</td>
-                        <td>300</td>
-                        <td>2700</td>
-                        
-                        <td>62</td>
-                       
+                        <td>25/10/2023</td>
                         <td>60</td>
-                        <td>6060</td>
-                        <td>606</td>
-                        <td>5454</td>
-                     
+                        <td>60</td>
+                        <td>Pendente</td>
                     </tr>
                 </tbody>
             </table>
 
+
+        </div>
+        <div>
+            <h4>Resumo da OP</h4>
+        </div>
+        <table class="table table-striped table-secondary" id="tabelaTotal">
             <thead>
-                <table id="lançamentos">
-                    <tr>
-                        <th>IdMOv</th>
-                        <th>Tipo Movimento</th>
-                        <th>Data/Hora</th>
-                        <th>Quantidade</th>
-                        <th>Detalhamento</th>
-                        <th>Registrar</th>
+                <tr>
+                    
+                    <th>Qte Produzida</th>
+                    <th>Qte Pendente</th>
+                    <th>PH Medio Realizado</th>
+                    <th>Ciclo Medio Realizado</th>
+                    <th>MP Estimada</th>
+                    <th>MP Consumida</th>
+                    <th>MP Pendente</th>
+                    <th>Horas Uteis</th>
+                    <th>Horas Paradas</th>
 
-
-                    </tr>
+                </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td><select id="selectTipoMovimento"> 
-                            <option value="Entrada">Entrada</option>
-                            <option value="Saida">Saida</option>
-                            <option value="Parada">Parada</option>
-                            <option value="Perda">Perda</option>
-
-                        </select></td>
-                    <td><input type="datetime-local" name="" id=""></td>
-                    <td><input type="number" name="" id="" placeholder="Quantidade"></td>
-			<td><select id="selectDetalhamento">
-                            <option value="Manutenção">Manutenção</option>
-                            <option value="Parada Almoço">Parada Almoço</option>
-                            <option value="Queda de Energia">Queda de Energia</option>
-                            <option value="Parada Programada">Parada Programada</option>
-                            <option value="Parada Emergencial">Parada Emergencial</option>
-                        </select></td>
-                    <td><input type="button" value="registrar"></td>
+                    <td>300</td>
+                    <td>2700</td>
+                    <td>62</td>
+                    <td>60</td>
+                    <td>6060</td>
+                    <td>606</td>
+                    <td>5454</td>
+                    <td>2:30</td>
+                    <td>0:30</td>
                 </tr>
             </tbody>
-            </table>
+        </table>
+        <div>
+            <h3>lançamentos</h3>
+        </div>
+            <table class="table table-striped" id="lançamentos">
+               <thead>
+                    <tr>
+                    <th>IdMOv</th>
+                    <th>Tipo Movimento</th>
+                    <th>Data/Hora</th>
+                    <th>Quantidade</th>
+                    <th>Detalhamento</th>
+                    <th>Registrar</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><select id="selectTipoMovimento">
+                        <option value="Entrada">Entrada</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Saida">Saida</option>
+                        <option value="Parada">Parada</option>
+                        <option value="Perda">Perda</option>
 
+                    </select></td>
+                <td><input type="datetime-local" name="" id=""></td>
+                <td><input type="number" name="" id="" placeholder="Quantidade"></td>
+                <td><select id="selectDetalhamento">
+                        <option value="Manutenção">Manutenção</option>
+                        <option value="Parada Almoço">Parada Almoço</option>
+                        <option value="Queda de Energia">Queda de Energia</option>
+                        <option value="Parada Programada">Parada Programada</option>
+                        <option value="Parada Emergencial">Parada Emergencial</option>
+                    </select></td>
+                <td><input type="button" value="registrar"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div>
+            <h3>Itens lançados</h3>
+        </div>
+        <table class="table table-striped" id="itenslançamentos">
+            <thead>
+                 <tr>
+                 <th>IdMOv</th>
+                 <th>Tipo Movimento</th>
+                 <th>Data/Hora</th>
+                 <th>Quantidade</th>
+                 <th>Detalhamento</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>00</td>
+                    <td>Evento</td>
+                    <td>25/10/2023 07:01:00</td>
+                    <td>0</td>
+                    <td>Inicio Producao</td>
+                </tr>
+                <tr>
+                <td>01</td>
+                <td>Entrada</td>
+                <td>25/10/2023 09:01:00</td>
+                <td>300</td>
+                <td>Matéria Prima</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Saida</td>
+                <td>25/10/2023 09:07:00</td>
+                <td>30</td>
+                <td>Produto Acabado</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Perda</td>
+                <td>25/10/2023 09:17:00</td>
+                <td>3</td>
+                <td>Perda Borra</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Evento</td>
+                <td>25/10/2023 09:17:00</td>
+                <td>0</td>
+                <td>Manutenção Elétrica</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Evento</td>
+                <td>25/10/2023 09:47:00</td>
+                <td>0</td>
+                <td>Manutenção Elétrica</td>
+            </tr>
+            </tbody>
     </section>
 
-<script>
-    var tipoMovimento = document.getElementById("selectTipoMovimento");
-var detalhamento = document.getElementById("selectDetalhamento");
+    <script>
+        var tipoMovimento = document.getElementById("selectTipoMovimento");
+        var detalhamento = document.getElementById("selectDetalhamento");
 
-tipoMovimento.addEventListener("change", function() {
-    // Limpa as opções atuais do segundo select
-    detalhamento.innerHTML = "";
-
-    // Obtém o valor selecionado no primeiro select
-    var selectedValue = tipoMovimento.value;
-
-    // Define as opções do segundo select com base na seleção no primeiro select
-    if (selectedValue === "Perda") {
-        var perdaOptions = ["Perda por deformação", "Perda por fora do padrão", "Perda por peso"];
-        perdaOptions.forEach(function(optionText) {
-            var option = document.createElement("option");
-            option.text = optionText;
-            detalhamento.add(option);
+        tipoMovimento.addEventListener("change", function () {
+        detalhamento.innerHTML = "";
+        var selectedValue = tipoMovimento.value;
+            if (selectedValue === "Perda") {
+                var perdaOptions = ["Perda por deformação", "Perda por fora do padrão", "Perda por peso"];
+                perdaOptions.forEach(function (optionText) {
+                    var option = document.createElement("option");
+                    option.text = optionText;
+                    detalhamento.add(option);
+                });
+            }
+            else if (selectedValue === "Parada") {
+                var paradaOptions = ["Almoço", "Manutenção Mecânica", "Manutenção Elétrica", "Manutenção Molde", "Outras"];
+                paradaOptions.forEach(function (optionText) {
+                    var option = document.createElement("option");
+                    option.text = optionText;
+                    detalhamento.add(option);
+                });
+            }
+            else if (selectedValue === "Entrada") {
+                var entradaOptions = ["Matéria Prima", "Aditivos", "Outros"];
+                entradaOptions.forEach(function (optionText) {
+                    var option = document.createElement("option");
+                    option.text = optionText;
+                    detalhamento.add(option);
+                });
+            }else if (selectedValue === "Saida") {
+                var saidaOptions = ["Produto Acabado", "Devolução MP", "Outros"];
+                saidaOptions.forEach(function (optionText) {
+                    var option = document.createElement("option");
+                    option.text = optionText;
+                    detalhamento.add(option);
+                });
+            }else if (selectedValue === "Evento") {
+                var eventoOptions = ["Inicio Producao", "Fim Producao", "Pausa Producao","Recomeço Producao"];
+                eventoOptions.forEach(function (optionText) {
+                    var option = document.createElement("option");
+                    option.text = optionText;
+                    detalhamento.add(option);
+                });
+            }
         });
-    } 
-    else if (selectedValue === "Parada") {
-        var paradaOptions = ["Almoço", "Manutenção Mecânica", "Manutenção Elétrica", "Manutenção Molde", "Outras"];
-        paradaOptions.forEach(function(optionText) {
-            var option = document.createElement("option");
-            option.text = optionText;
-            detalhamento.add(option);
-        });
-    } 
-    else if (selectedValue === "Entrada") {
-        var entradaOptions = ["Matéria Prima", "Aditivos", "Outros"];
-        entradaOptions.forEach(function(optionText) {
-            var option = document.createElement("option");
-            option.text = optionText;
-            detalhamento.add(option);
-        });
-    }
-});
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

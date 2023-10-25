@@ -13,7 +13,7 @@ const app = express();
 const InstPost = new Posts();
 
 app.use(express.static(Path.join(__dirname, "public")));
-const PORT = 3500;
+const PORT = 3400;
 
 app.listen(PORT, () => {
   console.log("servidor iniciado na porta", PORT);

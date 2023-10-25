@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>QUALIAPP - Criar O.P</title>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/estilo.css"/>
+</head>
+
+<body>
+  <h1 class="p-3 mb-2 bg-success text-white">CQAS > CRIAR OP</h1>
+  
+<header>
+    <div id="menu"></div>
+</header>
+<Script>
+  fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+</Script>
+<br>
+  <section>
+    <div>
+        <h3>Criar OP</h3>
+    </div>
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>N OP</th>
+    <th>Data</th>
+    <th>Produto</th>
+    <th>Maquina</th>
+    <th>Quantidade</th>
+    <th>Qte MP (Kg)</th>
+    </tr>
+</thead>
+<tbody>
+  <td><input type="text" name="" id=""></td>
+  <td><input type="datetime-local" name="" id=""></td>
+  <td><select name="" id="">
+<option value="Cadeira">Cadeira</option>
+<option value="Mesa">Mesa</option>
+<option value="Banqueta">Banqueta</option>
+  </select></td>
+  <td><select name="" id="">
+    <option value="J320">J320</option>
+    <option value="J480">J480</option>
+    <option value="J630">J630</option>
+    <option value="J650">J650</option>
+    <option value="J800">J800</option>
+    <option value="J1200">J1200</option>
+    <option value="J1400">J1400</option>
+    <option value="J1700">J1700</option>
+  </select></td>
+  <td><input type="number" name="" id=""></td>
+  <td><input type="number" name="" id=""></td>
+</tbody>
+</table>
+<input type="button" value="Salvar">
+
+<div id="OPPendentes"></div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>N OP</th>
+      <th>Data</th>
+      <th>Produto</th>
+      <th>Maquina</th>
+      <th>Quantidade</th>
+      <th>Qte MP (Kg)</th>
+      <th>Status</th>
+      </tr>
+  </thead>
+<td>1</td>
+<td>25/10/2023</td>
+<td>Cadeira</td>
+<td>J800</td>
+<td>3000</td>
+<td>6000</td>
+<td>Em andamento</td>
+</table>
+
+</section>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
