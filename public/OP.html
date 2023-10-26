@@ -201,6 +201,7 @@
         tipoMovimento.addEventListener("change", function () {
         detalhamento.innerHTML = "";
         var selectedValue = tipoMovimento.value;
+
             if (selectedValue === "Perda") {
                 var perdaOptions = ["Perda por deformação", "Perda por fora do padrão", "Perda por peso"];
                 perdaOptions.forEach(function (optionText) {
@@ -208,6 +209,7 @@
                     option.text = optionText;
                     detalhamento.add(option);
                 });
+                document.getElementById
             }
             else if (selectedValue === "Parada") {
                 var paradaOptions = ["Almoço", "Manutenção Mecânica", "Manutenção Elétrica", "Manutenção Molde", "Outras"];

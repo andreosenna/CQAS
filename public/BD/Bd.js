@@ -172,7 +172,19 @@ const OPS = [
         Status:"Iniciar",
         }
 ]
-export { Usuarios, Itens, BDUsuarios, Inspecoes, RNCS,OPS }
+const BDProdutos =[
+{
+    Codigo:1,
+    Descricao:"Cadeira Tipo",
+    CodERP:11111111111,
+    PH:60,
+    Ciclo:60,
+    PesoPadrao: 2.09,
+    Imagem:"",
+    Status:"True"
+}
+]
+export { Usuarios, Itens, BDUsuarios, Inspecoes, RNCS,OPS,BDProdutos }
 /*
 
 
