@@ -1,6 +1,6 @@
 import { BDProdutos } from '../BD/Bd.js';
 
-const tabela = document.getElementById('tabelaProdutos')
+//const tabela = document.getElementById('tabelaProdutos')
 
 function iniciarTabela() {
     const tbody = tabela.querySelector('tbody')
@@ -28,7 +28,7 @@ function iniciarTabela() {
     });
 
 }
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     iniciarTabela();
 });
 
@@ -38,5 +38,24 @@ JavaScript key:"7hgW4WU5XzSbVmOqhBz7lOoOr9QlFqEl7mowXNyq"
 REST API key:"0XcGkHxIYVnYJDZIJ0QDr06OA54OGdc5vPeSIuys"
 
 "
-
 */
+import Parse from 'parse/node.js'
+import Express from 'express'
+const app =  Express()
+const APP_ID = '80x2YuBsDmDhpRl9eGnxtubELifvJkwuAiwptyce'
+const JAVASCRIPT_ID= '7hgW4WU5XzSbVmOqhBz7lOoOr9QlFqEl7mowXNyq'
+const REST_API ='0XcGkHxIYVnYJDZIJ0QDr06OA54OGdc5vPeSIuys'
+Parse.initialize(APP_ID,JAVASCRIPT_ID)
+Parse.serverURL='https://parseapi.back4app.com/'
+
+const classeProdutos = Parse.Object.extend('Produtos')
+const cProdutos = new classeProdutos()
+const cProdutosQuery = new Parse.Query(classeProdutos)
+
+app.get('/',(req,res)=>{
+    cProdutosQuery.find().then((Obj => res.json(Obj))).catch((err)=>res.json(Obj))
+})
+const PORT = process.env.PORT || 4000
+app.listen(PORT,()=>{
+    console.log("server is running")
+})
