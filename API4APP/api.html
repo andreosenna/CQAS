@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>QUALIAPP - Em Breve</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="titulo">CQAS > Em breve</h1>
+
+    <header>
+        <div id="menu"></div>
+    </header>
+
+    <br>
+    <section>
+        <div class="welcome">
+            <div class="welcome-text">
+                <h1>Lançamento de OP</h1>
+            </div>
+            <table class="table table-striped" id="cabecalhoOP">
+                <thead>
+                    <tr>
+                        <th>idProdutos</th>
+                        <th>Descricao</th>
+                        <th>CodERP</th>
+                        <th>PH</th>
+                        <th>Ciclo</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="https://www.parse.com/libs/parse/1.11.0/parse.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Agora que o Parse SDK foi carregado, você pode usá-lo aqui.
+        const APP_ID = '80x2YuBsDmDhpRl9eGnxtubELifvJkwuAiwptyce'
+        const JAVASCRIPT_ID = '7hgW4WU5XzSbVmOqhBz7lOoOr9QlFqEl7mowXNyq'
+        const REST_API = '0XcGkHxIYVnYJDZIJ0QDr06OA54OGdc5vPeSIuys'
+
+        Parse.initialize(APP_ID, JAVASCRIPT_ID);
+        Parse.serverURL = 'https://parseapi.back4app.com';
+
+        const classeProdutos = Parse.Object.extend('Produtos');
+        const cProdutosQuery = new Parse.Query(classeProdutos);
+
+        // Agora você pode usar o Parse SDK para consultar dados e preencher a tabela.
+        cProdutosQuery.find().then((Obj) => {
+            const data = Obj.map(result => result.toJSON());
+            fillTable(data);
+        });
+
+        function fillTable(data) {
+            const tableBody = document.querySelector("#cabecalhoOP tbody");
+
+            data.forEach(item => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = item.idProdutos;
+                row.insertCell(1).textContent = item.Descricao;
+                row.insertCell(2).textContent = item.CodERP;
+                row.insertCell(3).textContent = item.PH;
+                row.insertCell(4).textContent = item.Ciclo;
+                row.insertCell(5).textContent = item.Status ? "Ativo" : "Inativo";
+            }
+        }
+    </script>
+</body>
+
+</html>
